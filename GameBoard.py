@@ -48,11 +48,11 @@ info = [
 
 class Board:
    def __init__(self) -> None:
-      self.start = Property(info[0][0], info[0][1])
+      self.start = Property(info[0][0], info[0][1], info[0][2])
 
       node = self.start
       for i in range(1, 40):
-         node.next = Property(info[i][0], info[i][1], i)
+         node.next = Property(info[i][0], info[i][1], info[i][2], i)
          node = node.next
          if i == 39:
             node.next = self.start
@@ -63,8 +63,10 @@ class Board:
       count = 0
 
       while curr and count < 41:
-         print(f"{curr.name}")
+         print(f"{curr.name} {curr.color}")
          curr = curr.next
          count += 1
 
-
+if __name__ == '__main__':
+   test = Board()
+   test.display()
