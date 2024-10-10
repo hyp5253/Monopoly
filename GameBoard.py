@@ -7,7 +7,7 @@ info = [
 ('Mediterranean Avenue', 60, 'Brown'),
 ('Community Chest', None, None),
 ('Baltic Avenue', 60, 'Brown'),
-('Income Tax', -200, None),
+('Income Tax', -200, 'Tax'),
 ('Reading Railroad', 200, 'Railroad'),
 ('Oriental Avenue', 100, 'Lightblue'),
 ('Chance', None, None),
@@ -41,7 +41,7 @@ info = [
 ('Short Line', 200, 'Railroad'),
 ('Chance', None, None),
 ('Park Place', 350, 'Blue'),
-('Luxury Tax', 100, None),
+('Luxury Tax', 100, 'Tax'),
 ('Boardwalk', 400, 'Blue')
 
 ]
