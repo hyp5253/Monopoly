@@ -1,6 +1,6 @@
 from Property import Property
 
-#(name, price, color)
+# (name, price, color)
 info = [
 
 ('GO', None, None),   
@@ -46,6 +46,9 @@ info = [
 
 ]
 
+# Instantiate this class to create a Monopoly Game Board
+# The underlying ADT is a CSLL
+# Each respective node is a Property Object
 class Board:
    def __init__(self) -> None:
       self.start = Property(info[0][0], info[0][1], info[0][2])
@@ -56,7 +59,6 @@ class Board:
          node = node.next
          if i == 39:
             node.next = self.start
-
 
    def display(self):
       curr = self.start
