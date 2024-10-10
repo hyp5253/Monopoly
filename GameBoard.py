@@ -1,8 +1,9 @@
 from Property import Property
 
+#(name, price, color)
 info = [
 
-('GO', None),   
+('GO', None, None),   
 ('Mediterranean Avenue', 60),
 ('Community Chest', None),
 ('Baltic Avenue', 60),
