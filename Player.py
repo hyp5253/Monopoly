@@ -2,7 +2,17 @@ from Property import Property
 import random
 
 class Player:
-   def __init__ (self, name='Player', money=1500, position=0, properties=[], is_turn=False):
+   def __init__ (
+      
+      self, 
+      name='Player', 
+      money=1500, 
+      position=0, 
+      properties=[], 
+      is_turn=False
+      
+      ):
+      
       self.name = name 
       self.money = money
       self.position = position
