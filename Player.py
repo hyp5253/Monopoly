@@ -60,6 +60,7 @@ class Player:
       spaces : int
          A value that is gotten from the roll_dice method
       """
+      
       count = spaces
 
       while count > 0:
@@ -127,6 +128,11 @@ class Player:
       """
       Simulates the rolling of a pair of dice and returns a bounded random int
       """
+
       self.is_turn = False
       return random.randint(2, 12)
 
+if __name__ == '__main__':
+   test = Player()
+   print(test.__doc__)
+   

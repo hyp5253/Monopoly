@@ -1,6 +1,5 @@
 import GameBoard as gb
 from Player import Player
-from collections import deque as dq
 
 if __name__ == '__main__':
    test = gb.Board()
@@ -22,7 +21,6 @@ if __name__ == '__main__':
          exit()
 
    
-   turn = dq(['P1', 'P2'])
    
       
       

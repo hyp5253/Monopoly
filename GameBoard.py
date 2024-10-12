@@ -54,7 +54,7 @@ class Board:
    display()
       Traverses through the nodes of the game board printing name and color
    """
-   
+
    def __init__(self) -> None:
       """
       Intializes the CSLL with Property objects using values from info
@@ -70,13 +70,13 @@ class Board:
 
    def display(self):
       """
-      Traverses through the nodes of the game board printing name and color
+      Traverses through the nodes of the game board printing name and group
       """
       curr = self.start
       count = 0
 
       while curr and count < 41:
-         print(f"{curr.name} {curr.color}")
+         print(f"{curr.name} {curr.group}")
          curr = curr.next
          count += 1
 
