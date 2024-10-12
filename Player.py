@@ -7,12 +7,12 @@ class Player:
       self, 
       name='Player', 
       money=1500, 
-      position=0, 
+      position=0,  
       properties=[], 
       is_turn=False
       
       ):
-      
+
       self.name = name 
       self.money = money
       self.position = position
