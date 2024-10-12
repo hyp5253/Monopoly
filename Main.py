@@ -6,6 +6,7 @@ if __name__ == '__main__':
    player1 = Player(name='P1', position=test.start, is_turn=True)
    player2 = Player(name='P2', position=test.start)
 
+# gameloop
    while True:
       if player1.is_turn:
          player1.move(player1.roll_dice())
@@ -20,7 +21,7 @@ if __name__ == '__main__':
          print(f"{player1.name} wins the game!")
          exit()
 
-   
+
    
       
       

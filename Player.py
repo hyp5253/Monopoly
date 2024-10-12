@@ -60,13 +60,17 @@ class Player:
       spaces : int
          A value that is gotten from the roll_dice method
       """
-      
+
       count = spaces
 
       while count > 0:
          self.position = self.position.next
+         if self.position.id == 0:
+            self.money += 200
+            print("You passed Go, collect $200!")
          count -= 1
       Player.buy(self)
+      print(' ')
 
    
    def buy(self) -> None:
@@ -74,43 +78,11 @@ class Player:
       Allows a player to buy a property if available
       """
 
-      if self.position.is_owned == False:
-         match self.position.id:
-            case 2:
-               print(f"{self.name} landed on {self.position.name}.")
-               return 
-            case 4:
-               print(f"{self.name} landed on {self.position.name}.")
-               self.money -= 200
-               return
-            case 7:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 10:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 17:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 20:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 22:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 30:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 33: 
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 36:
-               print(f"{self.name} landed on {self.position.name}.")
-               return
-            case 38:
-               print(f"{self.name} landed on {self.position.name}.")
-               self.money -= 100
-               return
+      if self.position.is_owned == False and self.position.price != None:
+         if self.position.group == 'Tax':
+            self.money -= self.position.price
+            print(f"{self.name} landed on {self.position.name}: - ${self.position.price}")
+            return
 
          response = input(f"Would {self.name} like to buy {self.position.name} for ${self.position.price}? Y/N \n")
 
@@ -119,7 +91,6 @@ class Player:
                self.position.is_owned = True
                self.properties += [self.position.name]
                self.money -= self.position.price
-               print(f"{self.name} now owns {self.position.name}.")
                return
             print(f"{self.name}, you don't have enough money...")
       
