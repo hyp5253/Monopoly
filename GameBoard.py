@@ -84,4 +84,4 @@ class Board:
 
 if __name__ == '__main__':
    test = Board()
-   test.display()
+   print(test.__doc__)
