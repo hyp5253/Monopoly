@@ -1,6 +1,5 @@
 from Property import Property
 
-
 info = [
 
 ('GO', None, None),   
@@ -55,6 +54,7 @@ class Board:
    display()
       Traverses through the nodes of the game board printing name and color
    """
+   
    def __init__(self) -> None:
       """
       Intializes the CSLL with Property objects using values from info
