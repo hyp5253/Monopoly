@@ -59,6 +59,7 @@ class Board:
       """
       Intializes the CSLL with Property objects using values from info
       """
+
       self.start = Property(info[0][0], info[0][1], info[0][2])
 
       node = self.start
@@ -72,6 +73,7 @@ class Board:
       """
       Traverses through the nodes of the game board printing name and group
       """
+      
       curr = self.start
       count = 0
 
