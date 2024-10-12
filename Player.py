@@ -13,8 +13,8 @@ class Player:
       the amount of money a player has
    position : Property
       a node that indicates the position on the gameboard
-   properties : 
-      #FIXME
+   properties : list
+      a list that stores the properties owned
    is_turn : bool
       a flag to indicate if it is the player's turn
 
@@ -24,6 +24,8 @@ class Player:
       Moves the player x amount of spaces along the gameboard and updates position
    buy()
       Called inside move and allows player to buy property if available
+   display_stats()
+      Formats user statistics and displays them when called 
    roll_dice()
       Returns a value representing a two dice roll
    """
@@ -39,7 +41,7 @@ class Player:
       position : Property, optional
          This value in None until the gameboard is intialized in gameloop
       properties : 
-         #FIXME
+         A list that stores the properties owned by player
       is_turn : bool, optional
          It is not the player's turn by default
       """
@@ -67,7 +69,7 @@ class Player:
          self.position = self.position.next
          if self.position.id == 0:
             self.money += 200
-            print("You passed Go, collect $200!")
+            print(f"{self.name} passed Go, collect $200!")
          count -= 1
       Player.display_stats(self)
       Player.buy(self)
@@ -95,11 +97,17 @@ class Player:
                return
             print(f"{self.name}, you don't have enough money...")
 
+
    def display_stats(self) -> None:
+      """
+      Displays the stats of the current player 
+      """
+
       print(f"{self.name} ------------------")
       print(f"Current balance: ${self.money}")
       print(f"Owned properties: {self.properties}")   
       
+
    def roll_dice(self) -> int:
       """
       Simulates the rolling of a pair of dice and returns a bounded random int
