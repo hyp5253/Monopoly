@@ -13,7 +13,7 @@ if __name__ == '__main__':
          player2.is_turn = True
          if player1.position.id == 30:
             print(f"{player2.name} wins the game!")
-            exit()
+            exit()   
 
       player2.move(player2.roll_dice())
       player1.is_turn = True

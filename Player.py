@@ -69,6 +69,7 @@ class Player:
             self.money += 200
             print("You passed Go, collect $200!")
          count -= 1
+      Player.display_stats(self)
       Player.buy(self)
       print(' ')
 
@@ -80,8 +81,8 @@ class Player:
 
       if self.position.is_owned == False and self.position.price != None:
          if self.position.group == 'Tax':
-            self.money -= self.position.price
-            print(f"{self.name} landed on {self.position.name}: - ${self.position.price}")
+            self.money += self.position.price
+            print(f"{self.name} landed on {self.position.name}: {self.position.price}")
             return
 
          response = input(f"Would {self.name} like to buy {self.position.name} for ${self.position.price}? Y/N \n")
@@ -93,7 +94,11 @@ class Player:
                self.money -= self.position.price
                return
             print(f"{self.name}, you don't have enough money...")
-      
+
+   def display_stats(self) -> None:
+      print(f"{self.name} ------------------")
+      print(f"Current balance: ${self.money}")
+      print(f"Owned properties: {self.properties}")   
       
    def roll_dice(self) -> int:
       """
