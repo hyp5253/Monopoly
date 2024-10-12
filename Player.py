@@ -28,7 +28,7 @@ class Player:
       Returns a value representing a two dice roll
    """
 
-   def __init__ (self, name='Player', money=1500, position=None,  properties=[], is_turn=False):
+   def __init__ (self, name='Player', money=1500, position=None, is_turn=False):
       """
       Parameters
       ----------
@@ -47,7 +47,7 @@ class Player:
       self.name = name 
       self.money = money
       self.position = position
-      self.properties = properties
+      self.properties = list([])
       self.is_turn = is_turn
 
    
