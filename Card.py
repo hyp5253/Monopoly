@@ -46,7 +46,6 @@ class ChanceDeque:
    def shuffle(self):
       pass
 
-
 community_chest = [
 
 ("Advance to GO (Collect $200)."),
@@ -78,6 +77,9 @@ class ChestDeque:
          curr.next = Card(community_chest[i])
          curr = curr.next
 
+   # most likely will have to add function calls within each card
+   # this could be the second part of each tuple
+   # each function gets called when the player lands on an appropriate square
    def get_top(self):
       card = self.top
       self.top = self.top.next
