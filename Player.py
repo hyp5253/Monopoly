@@ -2,49 +2,9 @@ from Property import Property
 import random
 
 class Player:
-   """
-   A class used to represent a player
 
-   Attributes
-   ----------
-   name : str
-      the name of the player
-   money : int
-      the amount of money a player has
-   position : Property
-      a node that indicates the position on the gameboard
-   properties : list
-      a list that stores the properties owned
-   is_turn : bool
-      a flag to indicate if it is the player's turn
-
-   Methods
-   -------
-   move(spaces)
-      Moves the player x amount of spaces along the gameboard and updates position
-   buy()
-      Called inside move and allows player to buy property if available
-   display_stats()
-      Formats user statistics and displays them when called 
-   roll_dice()
-      Returns a value representing a two dice roll
-   """
 
    def __init__ (self, name='Player', money=1500, position=None, is_turn=False):
-      """
-      Parameters
-      ----------
-      name : str, optional
-         The default name given is Player
-      money : int, optional
-         Money amount defaults to start amount of 1500
-      position : Property, optional
-         This value in None until the gameboard is intialized in gameloop
-      properties : 
-         A list that stores the properties owned by player
-      is_turn : bool, optional
-         It is not the player's turn by default
-      """
 
       self.name = name 
       self.money = money
@@ -54,14 +14,6 @@ class Player:
 
    
    def move(self, spaces: int) -> None:
-      """
-      Moves the player x amounn of spaces along the gameboard and updates position
-
-      Parameters
-      ----------
-      spaces : int
-         A value that is gotten from the roll_dice method
-      """
 
       count = spaces
 
@@ -77,9 +29,6 @@ class Player:
 
    
    def buy(self) -> None:
-      """
-      Allows a player to buy a property if available
-      """
 
       if self.position.is_owned == False and self.position.price != None:
          if self.position.group == 'Tax':
@@ -99,9 +48,6 @@ class Player:
 
 
    def display_stats(self) -> None:
-      """
-      Displays the stats of the current player 
-      """
 
       print(f"{self.name} ------------------")
       print(f"Current balance: ${self.money}")
@@ -109,9 +55,6 @@ class Player:
       
 
    def roll_dice(self) -> int:
-      """
-      Simulates the rolling of a pair of dice and returns a bounded random int
-      """
 
       self.is_turn = False
       return random.randint(2, 12)
