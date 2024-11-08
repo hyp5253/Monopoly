@@ -1,5 +1,6 @@
 from Property import Property
 import random
+import Chance
 
 class Player:
 
@@ -59,7 +60,24 @@ class Player:
       self.is_turn = False
       return random.randint(2, 12)
 
+
+   # we are writing out the functions in response to chance
+   def toGO(self):
+      spaces = 40 - self.position.id
+      self.move(spaces)
+
+   def toBW(self):
+      spaces = abs(39 - self.position.id)
+      self.move(spaces)
+
+   def moveBackThree(self):
+      pass
+
+   def toRR(self):
+      spaces = 40 - self.posiition.id + 5
+      self.move(spaces)
+
+
 if __name__ == '__main__':
    test = Player()
-   print(test.__doc__)
    
